@@ -222,22 +222,8 @@ public final class UIUtils {
                 i.setDataAndType(Uri.fromFile(new File(filePath)), mime);
                 Log.d("xxx1", Uri.fromFile(new File(filePath)).toString());
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                context.startActivity(i);
 
-//                if (mime != null && mime.contains("video")) {
-//                    if (MusicUtils.isPlaying()) {
-//                        MusicUtils.playOrPause();
-//                    }
-//                    UXStats.instance().log(UXAction.LIBRARY_VIDEO_PLAY);
-//                }
-
-                context.startActivity(i);
-//                String uri = Uri.fromFile(new File(filePath)).toString();
-//                String string = ((TorrentManagerActivity)context).getString();
-//                DownloadTorrentFragment fragment = (DownloadTorrentFragment) ((TorrentManagerActivity) context)
-//                        .getSupportFragmentManager()
-//                        .findFragmentByTag(string);
-//                fragment.getUri(uri);
-//                Toast.makeText(context, "Bắt đầu download ", Toast.LENGTH_LONG).show();
             }
         } catch (Throwable e) {
             UIUtils.showShortMessage(context, R.string.cant_open_file);
