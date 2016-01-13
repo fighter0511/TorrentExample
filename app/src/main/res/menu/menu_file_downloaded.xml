@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/open"
+        android:icon="@drawable/contextmenu_icon_play"
+        android:title="Mở"
+        android:visible="true"/>
+
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/contextmenu_icon_trash"
+        android:title="Xóa"
+        android:visible="true"/>
+</menu>
