@@ -1,16 +1,23 @@
 package pt.torrentexample.torrrent.manager;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
@@ -34,6 +41,7 @@ public class ShowFileDownloadFragment extends Fragment {
     private File currentDir;
     private FileArrayAdapter adapter;
     private ListView listFile;
+    private FloatingActionButton fab;
 
     public ShowFileDownloadFragment newInstance() {
         ShowFileDownloadFragment fragment = new ShowFileDownloadFragment();
@@ -52,7 +60,41 @@ public class ShowFileDownloadFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_file_downloaded, null);
         listFile = (ListView) view.findViewById(R.id.list_file);
         fill(currentDir);
+        fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog();
+            }
+        });
         return view;
+    }
+
+    public void showDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("Tìm kiếm");
+        builder.setMessage("Kết quả tìm kiếm sẽ được hiện thị trên trình duyệt mặc định");
+        final EditText editText = new EditText(getContext());
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        editText.setLayoutParams(lp);
+        editText.setGravity(Gravity.CENTER);
+        builder.setView(editText);
+        builder.setPositiveButton("Tìm kiếm", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String edtString = editText.getText().toString();
+                String uri = "http://www.google.com/search?q=" + edtString + " torrent";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                getContext().startActivity(intent);
+            }
+        });
+        builder.setNegativeButton("Bỏ qua", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
     }
 
     private void fill(File f) {
@@ -76,7 +118,19 @@ public class ShowFileDownloadFragment extends Fragment {
 
                     dir.add(new Item(ff.getName(), num_item, date_modify, ff.getAbsolutePath(), "directory_icon"));
                 } else {
-                    fls.add(new Item(ff.getName(), ff.length() + " Byte", date_modify, ff.getAbsolutePath(), "file_icon"));
+                    String name = ff.getName();
+                    String image = "";
+                    if (name.contains("torrent")) {
+                        image = "torrent_icon";
+                    } else if (name.contains("mp3") || name.contains("3gp") || name.contains("mp4")
+                            || name.contains("m4a") || name.contains("aac") || name.contains("wav")) {
+                        image = "icon_media_play";
+                    } else if (name.contains("jpg") || name.contains("gif") || name.contains("png")
+                            || name.contains("bmp") || name.contains("webp")) {
+                        image = "icon_photo";
+                    } else image = "file_icon";
+
+                    fls.add(new Item(ff.getName(), ff.length() + " Byte", date_modify, ff.getAbsolutePath(), image));
                 }
             }
         } catch (Exception e) {
@@ -93,33 +147,38 @@ public class ShowFileDownloadFragment extends Fragment {
         listFile.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, final long id) {
-                if (position == 0) {
-                    openFile((Item) adapter.getItem(0));
-                } else {
-                    final Item itemFile = (Item) adapter.getItem(position);
-                    PopupMenu popupMenu = new PopupMenu(getContext(), view);
-                    popupMenu.inflate(R.menu.menu_file_downloaded);
-                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                Item item = (Item) adapter.getItem(position);
+                openFile(item);
+            }
+        });
+        listFile.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                final Item item = (Item) adapter.getItem(position);
+                if (!item.getImage().equalsIgnoreCase("directory_up")) {
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setTitle("Xóa file");
+                    builder.setMessage("Bạn có muốn xóa file này không?");
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
-                        public boolean onMenuItemClick(MenuItem item) {
-                            switch (item.getItemId()) {
-                                case R.id.open:
-                                    openFile(itemFile);
-                                    return true;
-                                case R.id.delete:
-                                    deleteFile(itemFile);
-                                    return true;
-                            }
-                            return true;
+                        public void onClick(DialogInterface dialog, int which) {
+                            deleteFile(item);
                         }
                     });
-                    popupMenu.show();
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.show();
                 }
+                return true;
             }
         });
     }
 
-    private void openFile(Item item){
+    private void openFile(Item item) {
         if (item.getImage().equalsIgnoreCase("directory_icon") || item.getImage().equalsIgnoreCase("directory_up")) {
             currentDir = new File(item.getPath());
             fill(currentDir);
@@ -128,7 +187,7 @@ public class ShowFileDownloadFragment extends Fragment {
         }
     }
 
-    private void deleteFile(Item item){
+    private void deleteFile(Item item) {
         String name = item.getName();
         String path = item.getPath();
         File file = new File(path);
@@ -138,13 +197,13 @@ public class ShowFileDownloadFragment extends Fragment {
         fill(currentDir);
     }
 
-    private void runFile(Item item){
+    private void runFile(Item item) {
         MimeTypeMap myMime = MimeTypeMap.getSingleton();
         Intent intent = new Intent(Intent.ACTION_VIEW);
         String name = item.getName();
         String path = item.getPath();
         File file = new File(path);
-        if(fileExt(name).substring(1) != null){
+        if (fileExt(name).substring(1) != null) {
             String mimeType = myMime.getMimeTypeFromExtension(fileExt(name).substring(1));
             intent.setDataAndType(Uri.fromFile(file), mimeType);
             getContext().startActivity(intent);
@@ -171,4 +230,6 @@ public class ShowFileDownloadFragment extends Fragment {
 
         }
     }
+
+
 }

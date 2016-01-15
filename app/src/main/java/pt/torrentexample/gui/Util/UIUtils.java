@@ -218,9 +218,9 @@ public final class UIUtils {
         try {
 //            if (filePath != null && !openAudioInternal(filePath)) {
             if (filePath != null ) {
+                Log.d("xxx1", mime);
                 Intent i = new Intent(context, TorrentDownloadActivity.class);
                 i.setDataAndType(Uri.fromFile(new File(filePath)), mime);
-                Log.d("xxx1", Uri.fromFile(new File(filePath)).toString());
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 context.startActivity(i);
 

@@ -1,45 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
+    android:padding="10dp"
     android:background="#fff">
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="50dip"
-        android:layout_height="50dip"></ImageView>
+        android:layout_width="60dp"
+        android:layout_height="60dp"></ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dip"
-        android:layout_marginTop="5dip"
-        android:layout_toRightOf="@+id/icon"
-        android:singleLine="true"
-        android:textStyle="bold">
+        style="@style/BrowsePeerList.Item.Title"
+        android:layout_marginBottom="5dp"
+        android:text="@string/dummy_title"/>
 
 
-    </TextView>
 
     <TextView
         android:id="@+id/tvData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvName"
-        android:layout_marginLeft="10dip"
-        android:layout_toRightOf="@+id/icon">
-
-    </TextView>
+        style="@style/BrowsePeerList.Item.Extra"
+        android:layout_marginBottom="5dp"
+        android:text="@string/dummy_extra" />
 
     <TextView
         android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/tvName"
-        android:layout_marginLeft="5dip">
+        style="@style/ListItemSize"
+        android:layout_marginBottom="2dip"
+        android:text="@string/dummy_size"/>
 
-    </TextView>
-</RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

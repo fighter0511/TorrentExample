@@ -1,10 +1,13 @@
 package pt.torrentexample.torrrent.manager;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -19,11 +22,20 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 import pt.torrentexample.R;
 import pt.torrentexample.core.ConfigurationManager;
 import pt.torrentexample.core.Constants;
+import pt.torrentexample.gui.MainApplication;
 
 public class TorrentManagerActivity extends FragmentActivity {
 
@@ -43,8 +55,8 @@ public class TorrentManagerActivity extends FragmentActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
 
-        tabLayout.addTab(tabLayout.newTab().setText("Torrent File"));
-        tabLayout.addTab(tabLayout.newTab().setText("File Downloaded"));
+        tabLayout.addTab(tabLayout.newTab().setText("Torrent"));
+        tabLayout.addTab(tabLayout.newTab().setText("Downloaded"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
@@ -96,6 +108,56 @@ public class TorrentManagerActivity extends FragmentActivity {
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        checkUpdate();
+        MainApplication.getInstance().trackScreenView("Torrent manager activity");
+    }
 
+    public void checkUpdate(){
+        String urlUpdate = "http://5play.me:8892/WebDirectory-0.0.1-SNAPSHOT/browser/torrent_config";
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, urlUpdate,
+                null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    String currentVersion = response.getString("current_version");
+                    String forceUpdate = response.getString("force_update");
+                    String updateUrl = response.getString("update_url");
+                    if(!currentVersion.equalsIgnoreCase("1") || !forceUpdate.equalsIgnoreCase("false") ){
+                        showUpdateDialog(updateUrl);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
 
+            }
+        });
+        MainApplication.getInstance().addToRequestQueue(request, "req");
+    }
+
+    public void showUpdateDialog(final String updateUrl){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Cập nhật");
+        builder.setMessage("Đã có phiên bản mới của ứng dụng, cập nhật để có những tính năng mới nhất");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(updateUrl));
+                startActivity(intent);
+            }
+        });
+        builder.setNegativeButton("Cancal", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+    }
 }
