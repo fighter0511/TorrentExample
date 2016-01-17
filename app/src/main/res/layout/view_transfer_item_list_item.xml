@@ -91,15 +91,15 @@
             android:text="@string/dummy_size" />
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/view_transfer_item_list_item_button_play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|center_vertical"
-        android:layout_margin="3dp"
-        android:background="@null"
-        android:contentDescription="@null"
-        android:scaleType="fitCenter"
-        android:src="@drawable/browse_peer_play_icon" />
+    <!--<ImageButton-->
+        <!--android:id="@+id/view_transfer_item_list_item_button_play"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center|center_vertical"-->
+        <!--android:layout_margin="3dp"-->
+        <!--android:background="@null"-->
+        <!--android:contentDescription="@null"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:src="@drawable/browse_peer_play_icon" />-->
 
 </LinearLayout>

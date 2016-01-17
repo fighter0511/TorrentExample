@@ -449,7 +449,7 @@ public class TransferListAdapter extends BaseExpandableListAdapter {
         TextView seeds = findView(view, R.id.view_transfer_list_item_seeds);
         TextView peers = findView(view, R.id.view_transfer_list_item_peers);
 
-        ImageButton buttonPlay = findView(view, R.id.view_transfer_list_item_button_play);
+//        ImageButton buttonPlay = findView(view, R.id.view_transfer_list_item_button_play);
 
         seeds.setText(context.get().getString(R.string.seeds_n, download.getSeeds()));
         peers.setText(context.get().getString(R.string.peers_n, download.getPeers()));
@@ -468,22 +468,22 @@ public class TransferListAdapter extends BaseExpandableListAdapter {
         }
 
         List<TransferItem> items = download.getItems();
-        if (items != null && items.size() == 1) {
-            TransferItem item = items.get(0);
-            buttonPlay.setTag(item);
-            if (item.isComplete()) {
-                buttonPlay.setVisibility(View.VISIBLE);
-            } else {
-                if (item instanceof BTDownloadItem) {
-                    buttonPlay.setVisibility(previewFile((BTDownloadItem) item) != null ? View.VISIBLE : View.GONE);
-                } else {
-                    buttonPlay.setVisibility(View.GONE);
-                }
-            }
-            buttonPlay.setOnClickListener(playOnClickListener);
-        } else {
-            buttonPlay.setVisibility(View.GONE);
-        }
+//        if (items != null && items.size() == 1) {
+//            TransferItem item = items.get(0);
+//            buttonPlay.setTag(item);
+//            if (item.isComplete()) {
+//                buttonPlay.setVisibility(View.VISIBLE);
+//            } else {
+//                if (item instanceof BTDownloadItem) {
+//                    buttonPlay.setVisibility(previewFile((BTDownloadItem) item) != null ? View.VISIBLE : View.GONE);
+//                } else {
+//                    buttonPlay.setVisibility(View.GONE);
+//                }
+//            }
+//            buttonPlay.setOnClickListener(playOnClickListener);
+//        } else {
+//            buttonPlay.setVisibility(View.GONE);
+//        }
     }
 
     private void setPaymentOptionDrawable(BittorrentDownload download, TextView title) {
@@ -505,7 +505,7 @@ public class TransferListAdapter extends BaseExpandableListAdapter {
         TextView size = findView(view, R.id.view_transfer_list_item_size);
         TextView seeds = findView(view, R.id.view_transfer_list_item_seeds);
         TextView peers = findView(view, R.id.view_transfer_list_item_peers);
-        ImageButton buttonPlay = findView(view, R.id.view_transfer_list_item_button_play);
+//        ImageButton buttonPlay = findView(view, R.id.view_transfer_list_item_button_play);
 
         seeds.setText("");
         peers.setText("");
@@ -517,13 +517,13 @@ public class TransferListAdapter extends BaseExpandableListAdapter {
         size.setText(UIUtils.getBytesInHuman(download.getSize()));
 
         File previewFile = download.previewFile();
-        if (previewFile != null && WebSearchPerformer.isStreamable(previewFile.getName())) {
-            buttonPlay.setTag(previewFile);
-            buttonPlay.setVisibility(View.VISIBLE);
-            buttonPlay.setOnClickListener(playOnClickListener);
-        } else {
-            buttonPlay.setVisibility(View.GONE);
-        }
+//        if (previewFile != null && WebSearchPerformer.isStreamable(previewFile.getName())) {
+//            buttonPlay.setTag(previewFile);
+//            buttonPlay.setVisibility(View.VISIBLE);
+//            buttonPlay.setOnClickListener(playOnClickListener);
+//        } else {
+//            buttonPlay.setVisibility(View.GONE);
+//        }
     }
 
     private void populateBittorrentDownloadItem(View view, TransferItem item) {
@@ -531,24 +531,24 @@ public class TransferListAdapter extends BaseExpandableListAdapter {
         TextView title = findView(view, R.id.view_transfer_item_list_item_title);
         ProgressBar progress = findView(view, R.id.view_transfer_item_list_item_progress);
         TextView size = findView(view, R.id.view_transfer_item_list_item_size);
-        ImageButton buttonPlay = findView(view, R.id.view_transfer_item_list_item_button_play);
+//        ImageButton buttonPlay = findView(view, R.id.view_transfer_item_list_item_button_play);
 
         icon.setImageResource(getFileTypeIconId(FilenameUtils.getExtension(item.getFile().getAbsolutePath())));
         title.setText(item.getDisplayName());
         progress.setProgress(item.getProgress());
         size.setText(UIUtils.getBytesInHuman(item.getSize()));
 
-        buttonPlay.setTag(item);
-        if (item.isComplete()) {
-            buttonPlay.setVisibility(View.VISIBLE);
-        } else {
-            if (item instanceof BTDownloadItem) {
-                buttonPlay.setVisibility(previewFile((BTDownloadItem) item) != null ? View.VISIBLE : View.GONE);
-            } else {
-                buttonPlay.setVisibility(View.GONE);
-            }
-        }
-        buttonPlay.setOnClickListener(playOnClickListener);
+//        buttonPlay.setTag(item);
+//        if (item.isComplete()) {
+//            buttonPlay.setVisibility(View.VISIBLE);
+//        } else {
+//            if (item instanceof BTDownloadItem) {
+//                buttonPlay.setVisibility(previewFile((BTDownloadItem) item) != null ? View.VISIBLE : View.GONE);
+//            } else {
+//                buttonPlay.setVisibility(View.GONE);
+//            }
+//        }
+//        buttonPlay.setOnClickListener(playOnClickListener);
     }
 
 //    private void populateYouTubeDownload(View view, YouTubeDownload download) {

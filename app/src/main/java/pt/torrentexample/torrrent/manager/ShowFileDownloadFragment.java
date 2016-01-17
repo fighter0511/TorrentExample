@@ -30,6 +30,8 @@ import java.util.Collections;
 import java.util.List;
 
 import pt.torrentexample.R;
+import pt.torrentexample.SearchActivity;
+import pt.torrentexample.gui.MainApplication;
 import pt.torrentexample.torrrent.manager.showfile.FileArrayAdapter;
 import pt.torrentexample.torrrent.manager.showfile.Item;
 
@@ -64,7 +66,9 @@ public class ShowFileDownloadFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDialog();
+                MainApplication.getInstance().trackEvent("Downloaded Screen", "Search", "Track Event");
+                Intent intent = new Intent(getContext(), SearchActivity.class);
+                getContext().startActivity(intent);
             }
         });
         return view;

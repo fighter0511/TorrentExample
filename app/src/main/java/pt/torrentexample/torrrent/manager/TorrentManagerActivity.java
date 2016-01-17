@@ -32,10 +32,13 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import frostwire.uxstats.UXAction;
+import frostwire.uxstats.UXStats;
 import pt.torrentexample.R;
 import pt.torrentexample.core.ConfigurationManager;
 import pt.torrentexample.core.Constants;
 import pt.torrentexample.gui.MainApplication;
+import pt.torrentexample.gui.dialog.YesNoDialog;
 
 public class TorrentManagerActivity extends FragmentActivity {
 
@@ -49,6 +52,7 @@ public class TorrentManagerActivity extends FragmentActivity {
         setContentView(R.layout.activity_torrent_manager);
         ConfigurationManager.instance().setBoolean(Constants.PREF_KEY_GUI_TOS_ACCEPTED, true);
         initComponent();
+        onNewIntent(getIntent());
     }
 
     public void initComponent(){
@@ -159,5 +163,26 @@ public class TorrentManagerActivity extends FragmentActivity {
             }
         });
         builder.show();
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        if(intent == null){
+            return;
+        }
+        String action = intent.getAction();
+        if(action != null){
+            if(action.equals(Constants.ACTION_REQUEST_SHUTDOWN)){
+                UXStats.instance().log(UXAction.MISC_NOTIFICATION_EXIT);
+                showShutdownDialog();
+            }
+        }
+    }
+
+    private static final String SHUTDOWN_DIALOG_ID = "shutdown_dialog";
+
+    private void showShutdownDialog() {
+        YesNoDialog dlg = YesNoDialog.newInstance(SHUTDOWN_DIALOG_ID, R.string.app_shutdown_dlg_title, R.string.app_shutdown_dlg_message);
+        dlg.show(getFragmentManager()); //see onDialogClick
     }
 }

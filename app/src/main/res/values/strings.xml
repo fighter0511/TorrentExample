@@ -46,8 +46,8 @@
     <string name="donate_10">Donate $10</string>
     <string name="donate_25">Donate $25</string>
     <string name="couldnt_share_file">Could not share the file. Weird path found.</string>
-    <string name="one_file_shared" >One file has been shared to FrostWire devices on the same Wi-Fi network.</string>
-    <string name="n_files_shared" >%d files has been shared to FrostWire devices on the same Wi-Fi network.</string>
+    <string name="one_file_shared" >One file has been shared to TorrentManager devices on the same Wi-Fi network.</string>
+    <string name="n_files_shared" >%d files has been shared to TorrentManager devices on the same Wi-Fi network.</string>
     <string name="playing_now_colon">Playing now:</string>
     <string name="my_filetype">My %s</string>
     <string name="paused">Paused</string>
@@ -56,7 +56,7 @@
     <string name="enable_wifi_sharing">Wi-Fi Sharing</string>
     <string name="enable_wifi_sharing_summary">Share files with peers on the local Wi-Fi network.</string>
     <string name="youtube_download_status_verifying">Verifying</string>
-    <string name="donation_thanks">Thank you so much for Supporting FrostWire</string>
+    <string name="donation_thanks">Thank you so much for Supporting TorrentManager</string>
     <string name="torrent_scheme_download_not_supported">Download not supported</string>
     <string name="retry_search">Retry</string>
     <string name="use_archiveorg">Use Archive.org</string>
@@ -75,7 +75,7 @@
     <string name="use_frostclick">Use FrostClick</string>
     <string name="delete_this_track">Delete this track</string>
     <string name="are_you_sure_delete_current_track">Are you sure you want to delete the current track?</string>
-    <string name="wifi_sharing_disabled">Wi-fi sharing is off.\n\nWi-fi sharing can be used to share files locally between FrostWire powered devices connected to the same Wi-Fi network.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Learn more.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Wi-fi sharing is off.\n\nWi-fi sharing can be used to share files locally between TorrentManager powered devices connected to the same Wi-Fi network.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Learn more.&lt;/a&gt;</string>
     <string name="turn_on_wifi_sharing">Turn on Wi-fi Sharing</string>
     <string name="are_you_sure_wifi_sharing_off">Turning off Wi-Fi sharing will make all your locally shared files unavailable to other users on the nearby Wi-Fi network.</string>
     <string name="anonymous_usage_statistics">Anonymous Usage Statistics</string>
@@ -129,19 +129,19 @@
     <string name="menu_space_shortcut_label">Space</string>
     <string name="cant_open_file_does_not_exist">I can\'t open %1$s, the file does not exist.</string>
     <string name="saving_to_sd_card">Saving to SD card.</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android will erase downloaded files if FrostWire is uninstalled.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android will erase downloaded files if TorrentManager is uninstalled.</string>
     <string name="saving_to_internal_memory">Saving to Internal Memory</string>
     <string name="saving_to_internal_memory_description">You also have an SD card (%1$s available)</string>
     <string name="device_memory">Device\'s Memory</string>
     <string name="device_storage">Device\'s Storage</string>
     <string name="sdcard_storage">SD\'s Storage</string>
-    <string name="storage_setting_warning">WARNING: All files saved by FrostWire onto the SD card will be deleted BY ANDROID, not FrostWire, if you uninstall the app.</string>
+    <string name="storage_setting_warning">WARNING: All files saved by TorrentManager onto the SD card will be deleted BY ANDROID, not TorrentManager, if you uninstall the app.</string>
     <string name="storage_setting_confirm_dialog_title">SD CARD</string>
-    <string name="storage_setting_confirm_dialog_text">I understand that all files downloaded to the SD Card by FrostWire will be deleted BY ANDROID the moment the FrostWire application is uninstalled from this device and I will not hold FrostWire LLC liable for any files lost.</string>
+    <string name="storage_setting_confirm_dialog_text">I understand that all files downloaded to the SD Card by TorrentManager will be deleted BY ANDROID the moment the TorrentManager application is uninstalled from this device and I will not hold TorrentManager LLC liable for any files lost.</string>
     <string name="available">available</string>
     <string name="file_descriptor_sd_mounted">This file was deleted from the SD card, or the SD card you have inserted is a different one.</string>
     <string name="file_descriptor_sd_unmounted">This file belongs to an SD card, please insert it on your device.</string>
-    <string name="help_translate_frostwire">Help translate FrostWire</string>
+    <string name="help_translate_frostwire">Help translate TorrentManager</string>
     <string name="queued_for_checking">Queued for checking</string>
     <string name="checking_ellipsis">Checking&#8230;</string>
     <string name="downloading_metadata">Downloading metadata</string>
@@ -150,8 +150,8 @@
     <string name="error_wrong_signature">Error: Wrong signature</string>
     <string name="pausing">Pausing</string>
     <string name="canceling">Canceling</string>
-    <string name="app_shutdown_dlg_title">Shutdown</string>
-    <string name="app_shutdown_dlg_message">This will shutdown all transfers and background services. Are you sure?</string>
+    <string name="app_shutdown_dlg_title">Tắt ứng dụng</string>
+    <string name="app_shutdown_dlg_message">Tác vụ này sẽ tắt toàn bộ truyền tải và dịch vụ nền. Bạn có muốn tắt không?</string>
     <string name="error_not_enough_peers">Try again, not enough peers</string>
     <string name="http_download_status_save_dir_error">Save directory does not exist or can\'t be created</string>
     <string name="my_music">My Music</string>
@@ -170,22 +170,22 @@
     <string name="basic">Basic</string>
     <string name="plus">Plus</string>
     <string name="try_other_keywords">Try less/other keywords</string>
-    <string name="try_frostwire_plus_for_more_results">Try FrostWire Plus for more results</string>
+    <string name="try_frostwire_plus_for_more_results">Try TorrentManager Plus for more results</string>
     <string name="action_menu_overflow_description">More options</string>
     <string name="rate_our_app">Rate our App</string>
-    <string name="rating_reminder_description">If you love FrostWire please take a moment to rate us.</string>
-    <string name="love_frostwire">Love FrostWire</string>
+    <string name="rating_reminder_description">If you love TorrentManager please take a moment to rate us.</string>
+    <string name="love_frostwire">Love TorrentManager</string>
     <string name="send_feedback">Send Feedback</string>
     <string name="choose_email_app">Choose an Email App…</string>
     <string name="media_preview">%s preview</string>
     <string name="your_installation_is_complete">Your installation is complete.</string>
     <string name="thank_you">Thank you!</string>
     <string name="keep_in_touch">Keep in touch!</string>
-    <string name="frostwire_shutting_down_no_permissions">Sorry, FrostWire can\'t continue without your permission to access disk.</string>
+    <string name="frostwire_shutting_down_no_permissions">Sorry, TorrentManager can\'t continue without your permission to access disk.</string>
     <string name="restarting">Restarting…</string>
-    <string name="restarting_summary">FrostWire will now restart for granted permissions to take effect</string>
+    <string name="restarting_summary">TorrentManager will now restart for granted permissions to take effect</string>
     <string name="why_we_need_storage_permissions">Why we need storage permissions.</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire is a file browser and downloader app, therefore it needs to be able to access your disk.\n\nWithout your permissions FrostWire cannot work.\n\nWant to try again?</string>
+    <string name="why_we_need_storage_permissions_summary">TorrentManager is a file browser and downloader app, therefore it needs to be able to access your disk.\n\nWithout your permissions TorrentManager cannot work.\n\nWant to try again?</string>
     <string name="shutting_down">Shutting down…</string>
     <string name="help">Help</string>
     <string name="request_again">Request Again</string>
@@ -196,18 +196,18 @@
     <string name="protected_connection">Protected Connection</string>
     <string name="protect_my_privacy">Protect my privacy</string>
     <string name="dht_contacts">DHT contacts</string>
-    <string name="notify_frostwire_is_running">Notify if FrostWire is running</string>
+    <string name="notify_frostwire_is_running">Notify if TorrentManager is running</string>
     <string name="notify_frostwire_is_running_summary">Show a permanent Android notification with status of transfers</string>
     <string name="invalid_filename">Invalid file name</string>
     <string name="storage_picker_treeuri_null">No storage path was selected</string>
     <string name="storage_picker_treeuri_not_directory">The selected path is not a directory</string>
-    <string name="storage_picker_treeuri_cant_write">FrostWire can\'t write on the selected storage path</string>
+    <string name="storage_picker_treeuri_cant_write">TorrentManager can\'t write on the selected storage path</string>
     <string name="storage_picker_treeuri_error">Unexpected error picking storage path</string>
     <string name="storage_path">Storage Path</string>
 
     <!-- Important: Android is buggy with HTML, do not put HTML tags right next to text, leave a space, as it seems the text wrapping logic is considering HTML as visible text and you get premature wrapping. -->
     <string name="your_privacy_is_a_fundamental_right_html">Your privacy is a fundamental human right.</string>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<p> * Although highly recommended, <b>you do not need a VPN to use FrostWire. </b></p>]]></string>
+    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<p> * Although highly recommended, <b>you do not need a VPN to use TorrentManager. </b></p>]]></string>
     <string name="unprotected_connections_visibility_bullet">An unprotected connection makes everything you do online visible to your Internet provider and everyone on your network, that includes your searches, web browsing, messaging, emails and downloads. Consider a VPN.</string>
     <string name="protected_connections_visibility_bullet">Thank you for protecting your privacy by using a VPN. Your connection is secure.</string>
     <string name="learn_more">Learn more</string>
@@ -218,7 +218,7 @@
     <string name="title_activity_transfer_fragment2">TransferFragment2</string>
     <string name="title_activity_torrent_manager">TorrentManagerActivity</string>
 
-    <string name="application_label">FrostWire</string>
+    <string name="application_label">TorrentManager</string>
     <string name="activity_preferences_name">Thiết đặt</string>
     <string name="activity_browse_peer_name">Chọn host</string>
     <string name="activity_browse_peers_name">Chọn những người ở gần</string>
@@ -244,7 +244,7 @@
     <string name="settings_description">Thiết lập tìm kiếm</string>
     <string name="clear_finished">Xóa hoàn tất</string>
     <string name="support_free_software">Hỗ trợ phần mềm miễn phí</string>
-    <string name="show_love">Bạn yêu FrostWire?</string>
+    <string name="show_love">Bạn yêu TorrentManager?</string>
     <string name="waiting">Đang chờ¦</string>
     <string name="use_icons_to_browse">Sử dụng biểu tượng để chọn tập tin.</string>
     <string name="type_to_filter_results">Nhập vào để lọc kết quả.</string>
@@ -283,7 +283,7 @@
     <string name="searching_for">Đang tìm kiếm cho</string>
     <string name="search_for_type_files">Đang tìm kiếm cho những kiểu %s tập tin</string>
     <string name="update_title">Cập nhật thời gian!</string>
-    <string name="update_message">FrostWire đã tải về một bản cập nhật mới cho bạn, vui lòng tiếp tục và nhấn vào nút OK nếu bạn muốn cài đặt nó ngay bây giờ.</string>
+    <string name="update_message">TorrentManager đã tải về một bản cập nhật mới cho bạn, vui lòng tiếp tục và nhấn vào nút OK nếu bạn muốn cài đặt nó ngay bây giờ.</string>
     <string name="next_time">Lần Sau</string>
     <string name="change_my_nickname">Thay đổi nickname của tôi</string>
     <string name="try_changing_your_nickname">Nhập nickname của bạn</string>
@@ -311,14 +311,14 @@
     <string name="tos_title">Thỏa thuận sử dụng</string>
     <string name="tos_refuse">Từ chối</string>
     <string name="downloads">Tải về</string>
-    <string name="minimize_frostwire">Thu nhỏ FrostWire</string>
+    <string name="minimize_frostwire">Thu nhỏ TorrentManager</string>
     <string name="are_you_sure_you_wanna_leave">Bạn có chắc chắn muốn trở lại màn hình chính?</string>
     <string name="set_as_ringtone">Đặt làm nhạc chuông</string>
     <string name="set_as_wallpaper">Đặt làm hình nền</string>
     <string name="failed_to_set_wallpaper">Thất bại khi thiết lập hình nền</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
-    <string name="tell_others_subject">Bạn đã thử FrostWire cho Android chưa?</string>
-    <string name="and_choose_what_filetypes_to_share">Đánh dấu những kiểu tập tin bạn muốn chia sẻ thông qua FrostWire Mobile Network và mạng Wifi ở gần đã bật Desktops.</string>
+    <string name="tell_others_subject">Bạn đã thử TorrentManager cho Android chưa?</string>
+    <string name="and_choose_what_filetypes_to_share">Đánh dấu những kiểu tập tin bạn muốn chia sẻ thông qua TorrentManager Mobile Network và mạng Wifi ở gần đã bật Desktops.</string>
     <string name="before_getting_started">Trước khi bạn bắt đầu</string>
     <string name="user_connecting">Kết nối người dùng</string>
     <string name="accept_connection_from">Chấp nhận kết nối từ</string>
@@ -330,7 +330,7 @@
     <string name="browse">Lựa chọn</string>
     <string name="files_shared_by">Tập tin được chia sẻ bởi</string>
     <string name="mark_your_territory">Đánh dấu phạm vi của bạn</string>
-    <string name="get_a_frostwire_tshirt">Lấy một áo thun FrostWire</string>
+    <string name="get_a_frostwire_tshirt">Lấy một áo thun TorrentManager</string>
     <string name="internal_port">Cổng trong</string>
     <string name="external_port">Cổng ngoài</string>
     <string name="device">Thiết bị</string>
@@ -396,7 +396,7 @@
     <string name="long_press_for_batch_actions">Chạm vào bất cứ tựa đề tập tin để thực hiện chuỗi hành động</string>
     <string name="files_shared">Những tập tin đã được chia sẻ</string>
     <string name="share_finished_downloads">Chia sẻ những tải về đã hoàn thành lên WiFi</string>
-    <string name="share_finished_downloads_summary">Những tải về đã hoàn thành sẽ hiện hữu trên FrostWire của những người dùng khác trên mạng WiFi.</string>
+    <string name="share_finished_downloads_summary">Những tải về đã hoàn thành sẽ hiện hữu trên TorrentManager của những người dùng khác trên mạng WiFi.</string>
     <string name="are_you_sure_delete_files">Bạn có chắc chắn muốn xóa những tập tin đã chọn?</string>
     <string name="searchable_activity_label">Hoạt động tìm kiếm</string>
     <string name="search_hint">Tìm kiếm nội dung</string>
@@ -486,7 +486,7 @@
     <string name="download_finished">Tải về hoàn thành</string>
     <string name="clear_complete">Dọn danh sách hoàn thành</string>
     <string name="downloading_promotion">Đang tải về %s</string>
-    <string name="activity_about_droidwire_description">FrostWire cho Android</string>
+    <string name="activity_about_droidwire_description">TorrentManager cho Android</string>
     <string name="download_type_not_supported">Kiểu tải về này không được hỗ trợ</string>
     <string name="im_on_it">Tôi ở trên nóâ€¦</string>
     <string name="hint_transfers">Dùng "menu" cho nhiều hoạt động</string>
@@ -520,14 +520,14 @@
     <string name="wizard_previous">Trở lại</string>
     <string name="wizard_next">Tiếp tục</string>
     <string name="wizard_finish">Hoàn thành</string>
-    <string name="welcome_to_frostwire">Chào mừng bạn đến với FrostWire</string>
+    <string name="welcome_to_frostwire">Chào mừng bạn đến với TorrentManager</string>
     <string name="let_apos_s_set_you_up_before_we_begin_">Hãy để tôi giúp bạn thiết đặt trước khi chúng ta bắt đầu. Let\'s set you up before we begin.</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Làm thế nào để người khác thấy bạn trên mạng cục bộ (WiFi)</string>
     <string name="seeding_settings">Thiết lập Seeding</string>
     <string name="seeding_settings_explanation">Người dùng BitTorrent trên Internet sẽ có thể tải về các phần tập tin dữ liệu của những torrent bạn đang seed.</string>
     <string name="seeding_wifi_settings_explanation">Chỉ Seed khi sử dụng kết nối WiFi. Tránh thêm phí từ nhà mạng.</string>
-    <string name="intent_text">FrostWire là một chương trình chia sẻ mạng ngang hàng (peer-to-peer) các tập tin hợp pháp. Việc cài đặt và sử dụng chương trình sẽ không vi phạm bản quyền liên quan đến lưu trữ và chia sẻ nội dung trái phép.</string>
-    <string name="accept_intent">Tôi sẽ không dùng FrostWire cho mục đích vi phạm bản quyền</string>
+    <string name="intent_text">TorrentManager là một chương trình chia sẻ mạng ngang hàng (peer-to-peer) các tập tin hợp pháp. Việc cài đặt và sử dụng chương trình sẽ không vi phạm bản quyền liên quan đến lưu trữ và chia sẻ nội dung trái phép.</string>
+    <string name="accept_intent">Tôi sẽ không dùng TorrentManager cho mục đích vi phạm bản quyền</string>
     <string name="toast_on_disconnect">Đã ngắt kết nối từ BitTorrent. Tất cả quá trình BitTorrent đã dừng lại.</string>
     <string name="toast_on_connect">Nhân Bittorent đã bắt đầu chạy.</string>
     <string name="seeds">Seeds</string>
@@ -557,7 +557,7 @@
     <string name="desktop_transfer_status_complete">Complete</string>
     <string name="desktop_transfer_status_cancelled">Cancelled</string>
     <string name="desktop_transfer_status_unknown">Unknown</string>
-    <string name="support_frostwire">Hỗ trợ FrostWire</string>
+    <string name="support_frostwire">Hỗ trợ TorrentManager</string>
     <string name="support_frostwire_summary">Hiển thị quảng cáo để hỗ trợ sự phát triển của ứng dụng này.</string>
     <string name="storage_preference_title">Chọn vị trí lưu trữ</string>
     <string name="storage_preference_summary">Các lưu trữ mặc định vị trí nơi các tập tin sẽ được lưu lại.</string>

@@ -251,7 +251,7 @@ public class MainActivity extends AbstractActivity implements
                 intent.setAction(null);
             } else if (action.equals(Constants.ACTION_START_TRANSFER_FROM_PREVIEW)) {
 //                if (Ref.alive(NewTransferDialog.srRef)) {
-//                    SearchFragment.startDownload(this, NewTransferDialog.srRef.get(), getString(R.string.download_added_to_queue));
+//                    SearchActivity.startDownload(this, NewTransferDialog.srRef.get(), getString(R.string.download_added_to_queue));
 //                    UXStats.instance().log(UXAction.DOWNLOAD_CLOUD_FILE_FROM_PREVIEW);
 //                }
             } else if (action.equals(Constants.ACTION_REQUEST_SHUTDOWN)) {
@@ -787,7 +787,7 @@ public class MainActivity extends AbstractActivity implements
     }
 
     public void performYTSearch(String ytUrl) {
-//        SearchFragment searchFragment = (SearchFragment) getFragmentByMenuId(R.id.menu_main_search);
+//        SearchActivity searchFragment = (SearchActivity) getFragmentByMenuId(R.id.menu_main_search);
 //        searchFragment.performYTSearch(ytUrl);
 //        switchContent(searchFragment);
     }

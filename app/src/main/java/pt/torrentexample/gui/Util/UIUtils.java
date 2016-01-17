@@ -35,8 +35,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import frostwire.util.MimeDetector;
+import pt.torrentexample.MainActivity;
 import pt.torrentexample.R;
 import pt.torrentexample.TorrentDownloadActivity;
+import pt.torrentexample.core.ConfigurationManager;
 import pt.torrentexample.core.Constants;
 
 import org.apache.commons.io.FilenameUtils;
@@ -278,14 +280,14 @@ public final class UIUtils {
      * Checks setting to show or not the transfers window right after a download has started.
      * This should probably be moved elsewhere (similar to GUIMediator on the desktop)
      */
-//    public static void showTransfersOnDownloadStart(Context context) {
-//        if (ConfigurationManager.instance().showTransfersOnDownloadStart() && context != null) {
-//            Intent i = new Intent(context, MainActivity.class);
-//            i.setAction(Constants.ACTION_SHOW_TRANSFERS);
-//            i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-//            context.startActivity(i);
-//        }
-//    }
+    public static void showTransfersOnDownloadStart(Context context) {
+        if (ConfigurationManager.instance().showTransfersOnDownloadStart() && context != null) {
+            Intent i = new Intent(context, TorrentDownloadActivity.class);
+            i.setAction(Constants.ACTION_SHOW_TRANSFERS);
+            i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            context.startActivity(i);
+        }
+    }
 
     public static void showKeyboard(Context context, View view) {
         view.requestFocus();

@@ -48,6 +48,7 @@ import pt.torrentexample.gui.Util.SystemUtils;
 import pt.torrentexample.gui.Util.UIUtils;
 import pt.torrentexample.gui.VPNStatusDetailActivity;
 import pt.torrentexample.gui.transfers.TransferManager;
+import pt.torrentexample.torrrent.manager.TorrentManagerActivity;
 
 
 import java.io.File;
@@ -224,7 +225,7 @@ public class EngineService extends Service implements IEngineService {
         PendingIntent shutdownIntent = PendingIntent.getActivity(context,
                 1,
                 new Intent(context,
-                        ShowTorrentFile.class).
+                        TorrentManagerActivity.class).
                         setAction(Constants.ACTION_REQUEST_SHUTDOWN).
                         addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK),
                 0);

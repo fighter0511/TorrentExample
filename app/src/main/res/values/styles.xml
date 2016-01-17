@@ -204,4 +204,71 @@
         <item name="android:layout_height">1dp</item>
     </style>
 
+    <style name="BlueButton">
+        <item name="android:background">@drawable/blue_button_background_selector</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">17dp</item>
+        <item name="android:paddingRight">17dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="NoSearchResultsLink">
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/app_highlight_text</item>
+    </style>
+
+    <style name="ListItemTitle">
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/app_list_item_title_text_color</item>
+    </style>
+    <style name="SearchResultListItemSource">
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/basic_blue</item>
+    </style>
+
+    <style name="ListItemExtra">
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/app_list_item_title_text_color</item>
+    </style>
+
+    <style name="ListItemAd">
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:background">#ffedb802</item>
+        <item name="android:padding">2sp</item>
+    </style>
+
+    <style name="ListItemExt">
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">#ff3b3b3b</item>
+    </style>
+
+    <style name="SearchInputFileTypeButton" parent="android:Widget.CompoundButton.RadioButton">
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/searchinput_button_selector</item>
+        <item name="android:drawableTop">@drawable/radio_button_background_selector</item>
+        <item name="android:textColor">@drawable/radio_button_textcolor_selector</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="ProgressBarHolo.Horizontal" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_holo_light</item>
+        <item name="android:indeterminateDrawable">@drawable/progress_indeterminate_horizontal_holo</item>
+        <item name="android:minHeight">16dip</item>
+        <item name="android:maxHeight">16dip</item>
+    </style>
+
 </resources>
